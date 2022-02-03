@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+    <script src="../static/js/main.js"></script>
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
+    <style>
+        * {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="post">
+        <h1>Youtube sub increase</h1>
+
+        <div id="get_url">
+            <input id="url" type="text" name="url" placeholder="Enter channel url">
+        </div>
+
+        <h3>Choose a combo</h3>
+
+        <select name="combo_selector" id="combo">
+            <option value="free">Free Combo</option>
+            <option value="paid1">Paid Combo 1</option>
+            <option value="paid2">Paid Combo 2</option>
+            <option value="paid3">Paid Combo 3</option>
+        </select>
+
+        <h3>Quantily: <input value="1" class="quantily" id="quan" name="qty" type="number"></h3>
+
+        <h3 id="total">Total: 0 VND</h3>
+
+        <h3>{{error}}</h3>
+
+        <button id="checkout" type="submit">Checkout</button>
+
+        <div id="free">
+            <h3>Free Combo</h3>
+            <h4>Get your first free 5 subs (1 time use only)</h4>
+            <p id="price">Price: 0 vnd</p>
+        </div>
+
+        <div id="paid_10_sub">
+            <h3>Paid Combo 1</h3>
+            <h4>Get 10 more subs (Unlimited pay)</h4>
+            <p id="price">Price: 10.000 vnd</p>
+        </div>
+
+        <div id="paid_1000_sub">
+            <h3>Paid Combo 2</h3>
+            <h4>Get your first paid 1000 subs (1 time use only)</h4>
+            <p id="price">Price: 100.000 vnd</p>
+        </div>
+        <div id="paid_1000_sub_unl">
+            <h3>Paid Combo 3</h3>
+            <h4>Get your first paid 1000 subs (Unlimited pay)</h4>
+            <p id="price">Price: 300.000 vnd</p>
+        </div>
+
+    </form>
+
+    <style>
+        #checkout {
+            background-color: rgb(75, 133, 241);
+            width: 100px;
+            color: white;
+            font-size: large;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            transition-duration: 0.5s;
+        }
+
+        #checkout:hover {
+            background-color: white;
+            color: rgb(75, 133, 241);
+            cursor: pointer;
+        }
+
+        #quan {
+            width: 60px;
+            height: 22px;
+            border: black solid 1px;
+            border-radius: 5px;
+            font-size: large;
+        }
+
+        #price {
+            color: red;
+        }
+
+        #free {
+            background-color: #a1ff89;
+            width: auto;
+            height: 130px;
+            padding: 5px;
+            margin: 10px;
+            border-radius: 10px;
+            transition-duration: 0.1s;
+        }
+
+        #free:hover {
+            font-size: large;
+            height: 150px;
+        }
+
+        #paid_10_sub {
+            background-color: #6afc31;
+            width: auto;
+            height: 130px;
+            padding: 5px;
+            margin: 10px;
+            border-radius: 10px;
+            transition-duration: 0.1s;
+        }
+
+        #paid_10_sub:hover {
+            font-size: large;
+            height: 150px;
+        }
+
+        #paid_1000_sub {
+            background-color: #18ff10;
+            width: auto;
+            height: 130px;
+            padding: 5px;
+            margin: 10px;
+            border-radius: 10px;
+            transition-duration: 0.1s;
+        }
+
+        #paid_1000_sub:hover {
+            font-size: large;
+            height: 150px;
+        }
+
+        #paid_1000_sub_unl {
+            background-color: #00ff00;
+            width: auto;
+            height: 130px;
+            padding: 5px;
+            margin: 10px;
+            border-radius: 10px;
+            transition-duration: 0.1s;
+        }
+
+        #paid_1000_sub_unl:hover {
+            font-size: large;
+            height: 150px;
+        }
+
+        select {
+            display: block;
+            text-align: center;
+            width: 200px;
+            outline: none;
+        }
+
+        #combo {
+            margin: 0 auto;
+        }
+
+        #url {
+            width: 300px;
+            height: 20px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            font-size: larger;
+        }
+    </style>
+</body>
+
+</html>
